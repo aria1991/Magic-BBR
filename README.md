@@ -95,3 +95,13 @@ This script includes several enhancements comparing to other scripts :
 
 - It checks for packet loss
 
+
+## Article code
+
+The script is a simulation of a congestion control algorithm running on a client machine and communicating with a testbed server. It receives command-line arguments that specify the duration of the test, the size of the congestion window, the bandwidth and delay of the bottleneck link, the packet loss rate, and the testbed server's hostname or IP address.
+
+- The` parse_args()` function uses the argparse module to parse the command-line arguments and provide them as named parameters to the `main()` function.
+
+- The `run_test()` function simulates the transmission of packets over a network connection by adding send and receive times to a pair of deques and incrementing the send and receive byte counters. It adjusts the congestion window size by popping the oldest send and receive times from the deques when the window size is exceeded. It also simulates packet loss by randomly popping a send time from the deque with a probability equal to the specified loss rate, and simulates network delay by sleeping for the specified delay time.
+
+- The `main()` function calls the `run_test()` function with the parsed command-line arguments and stores the returned elapsed time, send bytes, and receive bytes. It also gathers system resource usage statistics using the psutil module, calculates the send and receive rates, and prints the results to the console.
