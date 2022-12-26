@@ -68,7 +68,7 @@ Where `BBR_GAIN` is a gain factor that adjusts the congestion window size based 
 
 The BBR algorithm also includes a "drain" phase, which is used to drain the remaining data in the congestion window when the connection is closed or when the BBR algorithm is disabled. In the drain phase, the congestion window size is gradually reduced to the slow start threshold in order to avoid disrupting the network.
 
-Fore more information check this **[Article](https://queue.acm.org/detail.cfm?id=3022184 "Article")**
+For more information check this **[Article](https://queue.acm.org/detail.cfm?id=3022184 "Article")**
 <!--more-->
 
 
